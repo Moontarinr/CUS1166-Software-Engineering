@@ -1,0 +1,83 @@
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Font;
+
+public class VehicleOwnerFrame
+{
+   public static void main(String[] args)
+   {
+	   //Subat
+	   
+      JFrame frame = new JFrame(); 
+      //jframe creates new window frame for our vehicle owner class
+
+      JLabel ownerIDLabel = new JLabel("Owner ID:");
+      JTextField ownerIDField = new JTextField(10);
+
+      JLabel makeLabel = new JLabel("Make:");
+      JTextField makeField = new JTextField(10);
+
+      JLabel modelLabel = new JLabel("Model:");
+      JTextField modelField = new JTextField(10);
+      
+      JLabel vinLabel = new JLabel("Vehicle Identification Number: ");
+      JTextField vinField = new JTextField(10);
+      //makes labels + component to enter text for all of the required information needed
+
+      JButton submitButton = new JButton("Submit");
+      //creates button for submit
+
+      // Set font and color for all labels - moontarin
+      Font labelFont = new Font("Georgia", Font.PLAIN, 16);
+      ownerIDLabel.setFont(labelFont);
+      ownerIDLabel.setForeground(Color.WHITE);
+      makeLabel.setFont(labelFont);
+      makeLabel.setForeground(Color.WHITE);
+      modelLabel.setFont(labelFont);
+      modelLabel.setForeground(Color.WHITE);
+      vinLabel.setFont(labelFont);
+      vinLabel.setForeground(Color.WHITE);
+      
+      // Set button font - moontarin
+      submitButton.setFont(new Font("Georgia", Font.BOLD, 14));
+      submitButton.setForeground(Color.BLACK);
+
+      JPanel panel = new JPanel();
+      panel.setBackground(new Color(0, 0, 128)); 
+      panel.add(ownerIDLabel);
+      panel.add(ownerIDField);
+      panel.add(makeLabel);
+      panel.add(makeField);
+      panel.add(modelLabel);
+      panel.add(modelField);
+      panel.add(vinLabel);
+      panel.add(vinField);
+      panel.add(submitButton);
+      //adding each of the labels, buttons, and text fields to panel
+
+      // Add title label at top- moontarin
+      JLabel titleLabel = new JLabel("Vehicle Owner Form", JLabel.CENTER);
+      titleLabel.setFont(new Font("Georgia", Font.BOLD, 24));
+      titleLabel.setForeground(Color.BLACK); 
+      frame.setLayout(new BorderLayout());
+      frame.add(titleLabel, BorderLayout.NORTH);
+      frame.add(panel, BorderLayout.CENTER);
+
+      final int FRAME_WIDTH = 600;
+      final int FRAME_HEIGHT = 500;
+      //made GUI 600 by 500 so labels fit in properly with their text fields
+
+      frame.setSize(FRAME_WIDTH, FRAME_HEIGHT);
+      frame.setTitle("Vehicle Owner Information");
+      //title of the frame is vehicle owner information now
+      frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+      //program closes when exit
+      frame.setVisible(true);
+      //window can show on screen 
+   }
+}
